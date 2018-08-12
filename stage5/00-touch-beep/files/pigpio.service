@@ -1,0 +1,10 @@
+  [Unit]
+  Description=pigpio service
+  After=
+
+  [Service]
+  ExecStart=pigpiod
+  Restart=always
+
+  [Install]
+  WantedBy=multi-user.target
