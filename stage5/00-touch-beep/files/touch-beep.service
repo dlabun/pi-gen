@@ -1,0 +1,10 @@
+  [Unit]
+  Description=touch-beep service
+  After=pigpio.service
+
+  [Service]
+  ExecStart=/opt/ComfileTech/touch/Beep/touch-beep
+  Restart=always
+
+  [Install]
+  WantedBy=multi-user.target
