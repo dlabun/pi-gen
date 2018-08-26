@@ -1,6 +1,6 @@
   [Unit]
   Description=touch-beep service
-  After=pigpio.service
+  After=pigpiod.service
 
   [Service]
   ExecStart=/opt/ComfileTech/touch/Beep/touch-beep

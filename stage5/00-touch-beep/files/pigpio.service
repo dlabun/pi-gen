@@ -1,10 +1,18 @@
-  [Unit]
-  Description=pigpio daemon service
-  After=
+[Unit]
+Description=Pigpio GPIO daemon
+Before=touch-beep.service
 
-  [Service]
-  ExecStart=pigpiod
-  Restart=always
+[Service]
+Type=forking
+ExecStart=/usr/local/bin/pigpiod
+TimeoutStopSec=3
+PIDFile=/run/pigpio.pid
 
-  [Install]
-  WantedBy=multi-user.target
+#User=root
+#Group=root
+
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+#Alias=pigpio.service
